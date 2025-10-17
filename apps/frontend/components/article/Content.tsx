@@ -17,7 +17,7 @@ export function ArticleContent({
   cardMaxCharacters: number;
 }) {
   function getTrimmedContent(content: string) {
-    return content.substring(0, cardMaxCharacters) + '...';
+    return content.substring(0, cardMaxCharacters) + 'This is so long, truncating.';
   }
 
   const article = {
