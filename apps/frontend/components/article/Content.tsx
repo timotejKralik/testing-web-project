@@ -2,6 +2,7 @@ import { css, useTheme } from '@emotion/react';
 import { ArticleReadMore } from 'components/article/ReadMore';
 import DOMPurify from 'isomorphic-dompurify';
 import { getArticlePathBySlug } from 'services/utils';
+import { truncate } from 'utils';
 
 export function ArticleContent({
   content,
@@ -17,7 +18,7 @@ export function ArticleContent({
   cardMaxCharacters: number;
 }) {
   function getTrimmedContent(content: string) {
-    return content.substring(0, cardMaxCharacters) + '...';
+    return truncate(content, cardMaxCharacters);
   }
 
   const article = {
